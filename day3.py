@@ -3,8 +3,9 @@ uppercaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lowercaseNumbers = list(range(1, 27))
 uppercaseNumbers = list(range(27, 53))
 
-lowercaseDict = dict(zip(lowercaseAlphabet, lowercaseNumbers))
-uppercaseDict = dict(zip(uppercaseAlphabet, uppercaseNumbers)) 
+lowercaseDict = dict(zip(lowercaseNumbers, lowercaseAlphabet))
+uppercaseDict = dict(zip(uppercaseNumbers, uppercaseAlphabet)) 
+
 totalSum = 0
 
 def removenewLine():
@@ -42,21 +43,22 @@ for i in range(0, len(lines), 3): # courtesy of openAI, how does this work???
     
     # Check if any two of the sets have at least one character in common
     if set1 & set2:
-        x = ''.join(set1.intersection(set1, set2))
-        print(x)
+        x = ''.join(set1.intersection(set2))
+        for char in len(x):
+            
         if x.isupper():
             totalSum += uppercaseDict.get(x) # important, to be reused
         else:
             totalSum += lowercaseDict.get(x)
     elif set1 & set3:
-        x = ''.join(set1.intersection(set1, set3))
+        x = ''.join(set1.intersection(set3))
         print(x)
         if x.isupper():
             totalSum += uppercaseDict.get(x) # important, to be reused
         else:
             totalSum += lowercaseDict.get(x)
     elif set2 & set3:
-        x = ''.join(set1.intersection(set2, set3))
+        x = ''.join(set2.intersection(set3))
         print(x)
         if x.isupper():
             totalSum += uppercaseDict.get(x) # important, to be reused
