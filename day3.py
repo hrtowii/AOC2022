@@ -99,7 +99,7 @@ with open("day3input.txt",'r') as readfile:
 
 print(totalSum)
 
-#part 2
+#part 2, doesn't work!!!
 count = 0
 totalSum = 0
 with open("day3input.txt", 'r') as readfile:
@@ -135,7 +135,13 @@ for i in range(0, len(lines), 3):
                 totalSum += uppercaseDict.get(char)
             else:
                 totalSum += lowercaseDict.get(char)
-    else:
+    elif set1 & set2 & set3:
+        x = ''.join(set2.intersection(set3))
+        for char in x:
+            if char.isupper():
+                totalSum += uppercaseDict.get(char)
+            else:
+                totalSum += lowercaseDict.get(char)
         print("None of these lines have a character in common.")
 
 print(totalSum)
