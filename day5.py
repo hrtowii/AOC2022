@@ -45,12 +45,18 @@ with open('day5input.txt') as f:
     for line in lines[:8]:
         i = 0
         for c in line[1::4]:
-            if c.strip(): grid[i].append(c)
+            if c.strip():
+                grid[i].append(c)
+
             i += 1
 
     for line in lines[10:]:
-        if line.strip(): grid = parseQuery(line, grid)
+        if line.strip():
+            grid = parseQuery(line, grid)
 
     out = ""
-    for row in grid: out += "".join(row[0])
+
+    for row in grid:
+        out += "".join(row[0])
+
     print(out)

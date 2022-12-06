@@ -21,7 +21,7 @@ const rl = readline.createInterface({
   input: fs.createReadStream('day4.txt')
 });
 
-const strings = rl.split(/\s+/);
+const strings = readline.split(/\s+/);
 
 // Convert each element in the array of strings into an element in the list
 const list = strings.map((str: any) => str.trim());
