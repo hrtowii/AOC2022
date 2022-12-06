@@ -1,5 +1,5 @@
-const readline = require('readline')
-const fs = require('fs')
+import * as readline from "readline";
+import * as fs from "fs";
 import * as lodash from "lodash";
 
 // function to convert every string separated by a space into an array
